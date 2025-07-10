@@ -6,7 +6,7 @@ You need Node to run this project.
 
 Install Node dependencies with npm.
 ``` shell
-npm install express express-ws node-pty
+npm install express express-ws node-pty xterm-addon-fit
 ```
 Launch the server
 ``` shell
