@@ -1,0 +1,10 @@
+[Unit]
+Description=NodeWebTerminal
+After=network.target
+
+[Service]
+ExecStart=/home/pablo/.config/nvm/versions/node/v22.14.0/bin/node /home/pablo/projects/NodeWebTerminal/server.js 
+WorkingDirectory=/home/pablo/projects/NodeWebTerminal
+Restart=always
+User=pablo
+Environment=NODE_ENV=production

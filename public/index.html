@@ -1,0 +1,25 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Terminal Web</title>
+  <link rel="stylesheet" href="xterm.css" /> <!-- ✅ Uso local -->
+  <style>
+    body, html { margin: 0; height: 100%; background: black; }
+    #terminal { height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+  <script src="xterm.js"></script>
+  <script>
+    const term = new Terminal();
+    term.open(document.getElementById('terminal'));
+
+    const socket = new WebSocket('ws://' + location.host + '/term');
+    socket.onmessage = e => term.write(e.data);
+    term.onData(data => socket.send(data));
+  </script>
+</body>
+</html>
