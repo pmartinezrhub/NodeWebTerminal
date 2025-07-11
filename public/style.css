@@ -1,0 +1,17 @@
+.terminal {
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255); 
+    border-color: #FFF;
+    height: 80%;
+    width: 90%;
+}
+
+.body {
+    margin: 0;
+    height: 80%;
+    /*background: black;*/
+}
+
+.h4 {
+    padding: 10px;
+}

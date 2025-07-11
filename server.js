@@ -12,8 +12,6 @@ app.ws('/term', (ws, req) => {
   const shell = process.platform === 'win32' ? 'powershell.exe' : 'bash';
   const ptyProcess = pty.spawn(shell, [], {
     name: 'xterm-color',
-    cols: 80,
-    rows: 30,
     cwd: process.env.HOME,
     env: process.env
   });
@@ -24,4 +22,4 @@ app.ws('/term', (ws, req) => {
 });
 
 const PORT = 3000;
-app.listen(PORT, () => console.log(`🚀 Servidor iniciado en http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server listening on http://localhost:${PORT}`));
